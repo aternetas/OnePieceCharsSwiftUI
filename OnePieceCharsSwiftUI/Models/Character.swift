@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct Character {
+struct Character: Identifiable {
+    let id: UUID = UUID()
     let name: String
     let icon: Image
     let role: Role
