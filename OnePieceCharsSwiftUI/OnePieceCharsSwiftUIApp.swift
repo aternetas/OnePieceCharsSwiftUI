@@ -2,7 +2,7 @@
 //  OnePieceCharsSwiftUIApp.swift
 //  OnePieceCharsSwiftUI
 //
-//  Created by f f on 05.05.2025.
+//  Created by aternetas on 05.05.2025.
 //
 
 import SwiftUI

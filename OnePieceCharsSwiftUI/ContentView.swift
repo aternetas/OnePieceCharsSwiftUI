@@ -2,20 +2,20 @@
 //  ContentView.swift
 //  OnePieceCharsSwiftUI
 //
-//  Created by f f on 05.05.2025.
+//  Created by aternetas on 05.05.2025.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List(1...4, id: \.self) {
+            Text("\($0)")
+            
+            Section {}
         }
-        .padding()
+        .background(.yellow)
+        .scrollContentBackground(.hidden)
     }
 }
 
