@@ -10,7 +10,7 @@ import SwiftUI
 struct Character: Identifiable {
     let id: UUID = UUID()
     let name: String
-    let icon: Image
+    let icon: ImageResource
     let role: Role
     let alias: String
 }

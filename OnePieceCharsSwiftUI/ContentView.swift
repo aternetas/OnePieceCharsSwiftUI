@@ -12,6 +12,7 @@ struct ContentView: View {
         let chars = CharacterService.shared.characters
         
         List(chars) {
+            Image($0.icon)
             Text("\($0.name)")
             
             Section {}
