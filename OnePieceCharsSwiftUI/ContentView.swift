@@ -12,17 +12,33 @@ struct ContentView: View {
         let chars = CharacterService.shared.characters
         
         List(chars) { char in
-            HStack {
+            LazyHStack {
                 Image(char.icon)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .clipShape(Circle())
                 
-                Text("\(char.name)")
-                    .font(.system(size: 16, weight: .semibold, design: .rounded))
-                    .bold()
-                    .padding(.leading, 10)
-                
+                VStack(spacing: 30) {
+                    Text("\(char.name)")
+                        .font(.system(size: 20, weight: .semibold, design: .rounded))
+                        .bold()
+                        .padding(.leading, 10)
+                    
+                    VStack(spacing: 8) {
+                        Text("\(char.role.title)")
+                            .font(.system(size: 17, weight: .semibold, design: .monospaced))
+                            .foregroundStyle(.blue)
+                            .bold()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading, 20)
+                        
+                        Text("\(char.alias)")
+                            .font(.system(size: 14, weight: .medium, design: .rounded))
+                            .bold()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading, 20)
+                    }
+                }
             }
         }
         .listStyle(.plain)
