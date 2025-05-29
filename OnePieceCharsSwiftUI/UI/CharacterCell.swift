@@ -11,7 +11,7 @@ struct CharacterCell: View {
     var char: Character
     
     var body: some View {
-        LazyHStack {
+        HStack {
             Image(char.icon)
                 .resizable()
                 .frame(width: 130, height: 130)
@@ -21,7 +21,8 @@ struct CharacterCell: View {
                 Text("\(char.name)")
                     .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .bold()
-                    .padding(.leading, 10)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 20)
                 
                 VStack(spacing: 8) {
                     Text("\(char.role.title)")
@@ -38,6 +39,9 @@ struct CharacterCell: View {
                         .padding(.leading, 20)
                 }
             }
+            
+            Spacer()
         }
+        .background(Color.clear)
     }
 }
